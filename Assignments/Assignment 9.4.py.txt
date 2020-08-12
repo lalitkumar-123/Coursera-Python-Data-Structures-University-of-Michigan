@@ -1,0 +1,30 @@
+name = input("Enter file:")
+if len(name) < 1 : name = "mbox-short.txt"
+handle = open(name)
+di = dict()
+lst = list()
+
+for lines in handle:
+    if not lines.startswith('From'):
+        continue
+    else: 
+     words = lines.split()   
+     word = words[1]
+     lst.append(word)         
+
+for w in lst:
+    di[w] = di.get(w,0) + 1
+  
+v = list(di.values())
+k = list(di.keys())
+
+a = k[v.index(max(v))] 
+b = max(di.values())
+c = b-5
+
+print('{}'.format(a),'{}'.format(c))
+      
+    
+    
+    
+    

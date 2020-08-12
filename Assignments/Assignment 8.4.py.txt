@@ -1,0 +1,14 @@
+fname = input("Enter file name: ")
+lst = list()
+fh = open(fname)
+for lines in fh:
+ words = lines.split()
+ for word in words:   
+  if word in lst:
+    continue
+  else:
+    lst.append(word)    
+    
+lst.sort()
+
+print(lst)
